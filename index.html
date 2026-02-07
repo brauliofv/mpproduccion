@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mpproduccion | Coming Soon</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap');
+
+        :root {
+            --bg-color: #fcfcfc;
+            --text-color: #1a1a1a;
+            --sub-color: #888888;
+            --link-color: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Helvetica Neue', 'Inter', 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            /* Prevent scroll */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Hierarchy */
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            /* Responsive font size */
+            font-weight: 700;
+            text-transform: lowercase;
+            letter-spacing: 0.15em;
+            /* Wide tracking */
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 0.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--sub-color);
+            margin-bottom: 3rem;
+            /* Negative space */
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 4rem;
+            /* Generous negative space */
+            line-height: 1.6;
+        }
+
+        /* Links */
+        .social-links {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            align-items: center;
+        }
+
+        .social-links li {
+            position: relative;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--link-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links svg {
+            width: 16px;
+            height: 16px;
+            stroke-width: 1.5;
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--link-color);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .social-links a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .social-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .social-links {
+                flex-direction: column;
+                /* Stack vertically on small screens if needed, or keep horizontal with less gap */
+                gap: 1.5rem;
+            }
+
+            p {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>mpproduccion</h1>
+        <h2>Moda y Talento Nacional</h2>
+
+        <p>Estamos perfeccionando nuestra plataforma para ofrecerte una experiencia superior. Pronto estaremos de vuelta
+            con más moda, publicidad y talento nacional mexicano.
+            <br>
+            <br>Síguenos en nuestras redes sociales.
+        </p>
+
+        <ul class="social-links">
+            <li>
+                <a href="https://www.instagram.com/mpmodaenproduccion/" target="_blank">
+                    <i data-lucide="instagram"></i>
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/profile.php?id=100064618406270" target="_blank">
+                    <i data-lucide="facebook"></i>
+                    Facebook
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCXGmegEzw2POwve0hzlRScg" target="_blank">
+                    <i data-lucide="youtube"></i>
+                    YouTube
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
