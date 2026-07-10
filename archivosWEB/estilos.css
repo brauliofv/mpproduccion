@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.item {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Imagen de fondo usando pseudo-elemento ::before para zoom y transiciones fluidas */
+.item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
+}
+
+#maga::before {
+  background-image: url(../archivosWEB/banner2019c.jpg);
+  background-position: center;
+}
+
+#modaa::before {
+  background-image: url(../archivosWEB/banner2019d.jpg);
+  background-position: center;
+}
+
+#publi::before {
+  background-image: url(../archivosWEB/banner2019i.jpg);
+  background-position: right -450px bottom;
+}
+
+/* Tarjeta contenedora de contenido con diseño glassmorphism */
+.item>div {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 0, 191, 0);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  margin: 20px;
+  max-width: 85%;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+
+/* Efecto Hover en Pantallas Grandes (Escritorio/Laptops) */
+@media (min-width: 1031px) {
+  .item:hover {
+    flex: 1.4;
+  }
+
+  .item:hover::before {
+    transform: scale(1.08);
+  }
+
+  .item:hover>div {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Vista Responsiva / Vertical (Celulares y Tablets) */
+@media (max-width: 1030px) {
+  .container1 {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .item {
+    min-height: 33.33vh;
+    flex: 1;
+  }
+
+  /* Centrar imágenes de fondo para una mejor visualización en móvil */
+  #maga::before,
+  #modaa::before,
+  #publi::before {
+    background-position: center !important;
+  }
+
+  /* Estilo de tarjeta de contenido más compacto para pantallas pequeñas */
+  .item>div {
+    padding: 25px 20px;
+    margin: 10px;
+    max-width: 90%;
+  }
+
+  /* Ajuste de tipografía para evitar desbordes */
+  .item h2.display-4 {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .item p.lead {
+    font-size: 1rem !important;
+    margin-bottom: 1rem;
+  }
+}
+
+/* --- EQUIVALENCIAS DE BOOTSTRAP --- */
+.display-4 {
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.text-dark {
+  color: #212529 !important;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 1.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.btn-outline-dark {
+  color: #212529;
+  border-color: #212529;
+}
+
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}
