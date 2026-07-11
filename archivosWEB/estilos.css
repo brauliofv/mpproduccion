@@ -56,14 +56,14 @@ body {
 
 #publi::before {
   background-image: url(../archivosWEB/banner2019i.jpg);
-  background-position: right -450px bottom;
+  background-position: left;
 }
 
 /* Tarjeta contenedora de contenido con diseño glassmorphism */
 .item>div {
   position: relative;
   z-index: 2;
-  background: rgba(255, 0, 191, 0);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 40px 30px;
